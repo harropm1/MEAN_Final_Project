@@ -1,0 +1,38 @@
+[
+    {
+        "USERNAME": "Michelle",
+        "EMAIL": "michelle@mail.com",
+        "PASSWORD": "password",
+        "ISADMIN": 1
+    },
+    {
+        "USERNAME": "Megan",
+        "EMAIL": "megan@mail.com",
+        "PASSWORD": "password",
+        "ISADMIN": 0
+    },
+    {
+        "USERNAME": "Peggy",
+        "EMAIL": "peggy@mail.com",
+        "PASSWORD": "password",
+        "ISADMIN": 0
+    },
+    {
+        "USERNAME": "Bob",
+        "EMAIL": "bob@mail.com",
+        "PASSWORD": "password",
+        "ISADMIN": 1
+    },
+    {
+        "USERNAME": "Jenny",
+        "EMAIL": "jenny@mail.com",
+        "PASSWORD": "password",
+        "ISADMIN": 0
+    },
+    {
+        "USERNAME": "Kenzi",
+        "EMAIL": "kenzi@mail.com",
+        "PASSWORD": "password",
+        "ISADMIN": 0
+    }
+]

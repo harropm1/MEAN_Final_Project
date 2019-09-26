@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {{> head}}
+    <link rel="stylesheet" href="/styles/loginregister.css">
+</head>
+
+<body>
+    {{> navbar}}
+
+    {{> header}}
+
+    <main>
+        <div class="container">
+            <!--Form to log in-->
+            <form id="loginForm" name="loginForm" method="GET">
+                <fieldset class="container border border-secondary p-3 rounded col-6">
+                    <legend class="font-weight-light bg-secondary text-center text-white w-50 rounded">Log In</legend>
+                    <div class="form-group">
+                        <label for="USERNAME">User Name</label>
+                        <input type="text" class="form-control" id="USERNAME" name="USERNAME" value="" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="PASSWORD">Password</label>
+                        <input type="password" class="form-control" id="PASSWORD" name="PASSWORD" value="" required>
+                    </div>
+                    <!--button to login-->
+                    <button type="submit" class="btn btn-light blueBackground" id="login">Log In!</button>
+                </fieldset>
+            </form>
+            <div id="msgDiv"></div>
+        </div>
+    </main>
+
+    {{> footer}}
+
+    {{> scripts}}
+
+    <!--My JavaScript-->
+    <script src="/scripts/loginregister.js"></script>
+</body>
+
+</html>
