@@ -1,21 +1,6 @@
 var userService = require('../services/userService');
 var userController = {};
 
-//display login page
-userController.loginPage = (req, res) => {
-    res.render('login', { title: 'West Hartford Cares - Login' });
-};
-
-//display register page
-userController.registerPage = (req, res) => {
-    res.render('register', { title: 'West Hartford Cares - Register' });
-}
-
-//display register page
-userController.editPage = (req, res) => {
-    res.render('update', { title: 'West Hartford Cares - Edit User' });
-}
-
 //this is the post for the login page (/users/login)
 userController.login = (req, res) => {
     userService.login( {

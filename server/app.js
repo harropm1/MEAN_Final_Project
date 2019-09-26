@@ -7,7 +7,6 @@ var logger = require('morgan');
 var session = require('express-session');
 
 //declaring required routes
-var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var leaguesRouter = require('./routes/leagues');
 var adminRouter = require('./routes/admin');
@@ -43,7 +42,6 @@ app.use(session({
 }));
 
 //setting routes
-app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/leagues', leaguesRouter);
 app.use('/admin', adminRouter);
