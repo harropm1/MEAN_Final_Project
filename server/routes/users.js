@@ -2,15 +2,6 @@ var express = require('express');
 const api = require('../controllers/userController')
 var router = express.Router();
 
-// GET (load) the login page.
-router.get('/login', api.loginPage);
-
-// GET (load) the register page.
-router.get('/register', api.registerPage);
-
-// GET (load) the edit page.
-router.get('/update', api.editPage);
-
 //this is the post request for the login page (/users/login)
 router.post('/login', api.login);
 

@@ -1,11 +1,6 @@
 var adminService = require('../services/adminService');
 var adminController = {};
 
-//display admin page
-adminController.adminPage = (req, res) => {
-    res.render('admin', { title: 'West Hartford Cares - Admin Page' });
-};
-
 // GET: http://localhost:3000/admin/members
 adminController.usersList = (req, res) => {
     adminService.usersList(req, res)

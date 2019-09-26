@@ -1,69 +1,10 @@
 {
 	"info": {
-		"_postman_id": "06e3abab-9546-4e7d-8e95-0ff0101e2f14",
-		"name": "labs",
+		"_postman_id": "2d418f19-abc9-4ef7-8eb1-a81070c8a7bd",
+		"name": "labs copy",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
-		{
-			"name": "Home",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Login",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/users/login",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"users",
-						"login"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Register",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/users/register",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"users",
-						"register"
-					]
-				}
-			},
-			"response": []
-		},
 		{
 			"name": "Register-Success",
 			"request": {
@@ -169,25 +110,6 @@
 			"response": []
 		},
 		{
-			"name": "Leagues",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/leagues",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"leagues"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "Leagues Data",
 			"request": {
 				"method": "GET",
@@ -276,25 +198,6 @@
 						"users",
 						"delete",
 						"8"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Admin",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/admin",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"admin"
 					]
 				}
 			},
