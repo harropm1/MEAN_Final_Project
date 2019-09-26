@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+/* color for site: #013e84 */
+
+.navbar-custom {
+    background-color: #013e84 !important;
+    color: white;
+}
+
+h1, h2, h3 {
+    color: #013e84;
+    font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+    margin-top: 8px;
+}
+
+.blueBackground {
+    background-color: #013e84 !important;
+    color: white;
+}
+
+#errorMessages {
+    color: red;
+    font-size: 1em;
+}
+
+#msgDiv {
+    font-size: 1.5em;
+}
+
+.hidden {
+    display: none;
+}
