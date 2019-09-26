@@ -5,6 +5,9 @@ import { Routes, RouterModule }  from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { IndexComponent } from './index/index.component';
+import { NavComponent } from './nav/nav.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 
 const appRoutes: Routes = [
   {path: '', component: IndexComponent}
@@ -13,7 +16,10 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    IndexComponent
+    IndexComponent,
+    NavComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
