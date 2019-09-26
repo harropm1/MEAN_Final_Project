@@ -13,8 +13,6 @@ var usersRouter = require('./routes/users');
 var leaguesRouter = require('./routes/leagues');
 var adminRouter = require('./routes/admin');
 
-const PORT = 3000;
-
 var app = express();
 
 // view engine/hbs partials setup
@@ -64,10 +62,6 @@ app.use(function (err, req, res, next)
 	// render the error page
 	res.status(err.status || 500);
 	res.render('error');
-});
-
-app.listen(PORT, () => {
-    console.log(`Express Server listening on http://localhost:${PORT}`);
 });
 
 module.exports = app;
