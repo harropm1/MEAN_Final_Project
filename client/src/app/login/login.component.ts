@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {}
 
   onSubmit(): void {
+    console.log("here");
     if (this.userName == '') {
       this.errMsg = 'User name is required.';
       this.error = true;
@@ -35,7 +36,7 @@ export class LoginComponent implements OnInit {
       // Call UserService to authenticate
       this.userService.login(this.userName, this.password).subscribe(data => {
         if (data['error']) {
-          this.errMsg = 'Login unsuccessful.';
+          this.errMsg = 'Login unsuccessful. Please make sure you are using the correct username and password.';
           this.error = true;
         } else {
           this.router.navigate(['leagues']);
