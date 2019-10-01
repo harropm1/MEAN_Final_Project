@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
 import { UserService } from './../providers/user.service';
 
 @Component({
@@ -10,6 +9,7 @@ import { UserService } from './../providers/user.service';
 })
 export class LoginComponent implements OnInit {
   pageTitle = 'Login';
+  ID: number;
   userName: string = '';
   password: string = '';
 
@@ -22,13 +22,13 @@ export class LoginComponent implements OnInit {
   ngOnInit() {}
 
   onSubmit(): void {
-    if (this.userName == '') {
-      this.errMsg = 'User name is required.';
+    if (this.userName == '' || this.password == '') 
+    {
+      this.errMsg = 'User name and password are required.';
       this.error = true;
-    } else if (this.password == '') {
-      this.errMsg = 'Password is required.';
-      this.error = true;
-    } else {
+    } 
+    else 
+    {
       this.error = false;
       this.errMsg = '';
 
@@ -38,7 +38,8 @@ export class LoginComponent implements OnInit {
           this.errMsg = 'Login unsuccessful. Please make sure you are using the correct username and password.';
           this.error = true;
         } else {
-          this.router.navigate(['leagues']);
+          this.router.navigate(['leagues'], {queryParams: {ID: this.ID, userName: this.userName}});
+          console.log(data)
         }
       });
     }
