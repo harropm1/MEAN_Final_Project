@@ -12,7 +12,7 @@ router.post('/register', api.register);
 router.get('/getUser/:ID', api.getUser)
 
 //this is the put (update) request for the single user edit page (/users/update/{ID})
-router.put('/update/:ID', api.update);
+router.put('/edit/:ID', api.update);
 
 //this is the delete request for the single user edit page (users/delete/{ID})
 router.delete('/delete/:ID', api.delete);
