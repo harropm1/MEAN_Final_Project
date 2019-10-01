@@ -13,13 +13,15 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { LeaguesComponent } from './leagues/leagues.component';
 import { EditComponent } from './edit/edit.component';
+import { AdminComponent } from './admin/admin.component';
 
 const appRoutes: Routes = [
   {path: '', component: IndexComponent},
   {path: 'users/login', component: LoginComponent},
   {path: 'users/register', component: RegisterComponent},
   {path: 'users/edit', component: EditComponent},
-  {path: 'leagues', component: LeaguesComponent}
+  {path: 'leagues', component: LeaguesComponent},
+  {path: 'admin', component: AdminComponent}
 ];
 
 @NgModule({
@@ -32,7 +34,8 @@ const appRoutes: Routes = [
     LoginComponent,
     RegisterComponent,
     LeaguesComponent,
-    EditComponent
+    EditComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
