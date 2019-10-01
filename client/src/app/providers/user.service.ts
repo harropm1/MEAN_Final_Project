@@ -16,13 +16,16 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
+  /* POST for login */
   login(userName: string, password: string) {
-    return this.http.post(`${this.usersEndpoint}login`, {userName : userName, userPassword : password}, this.httpOptions)
+    console.log("service here");
+    return this.http.post(`${this.usersEndpoint}login`, {USERNAME : userName, PASSWORD : password}, this.httpOptions)
       .pipe(map(res => <any[]>res));
   }
   
+  /* POST for register */
   register(userName: string, email: string, password: string) {
-    return this.http.post(this.usersEndpoint, {userName : userName, userEmail : email, userPassword : password}, this.httpOptions)
+    return this.http.post(`${this.usersEndpoint}register`, {USERNAME : userName, userEmail : email, userPassword : password}, this.httpOptions)
       .pipe(map(res => <any[]>res));
   }
 }
