@@ -25,7 +25,7 @@ export class UserService {
   
   /* POST for register */
   register(userName: string, email: string, password: string) {
-    return this.http.post(`${this.usersEndpoint}register`, {USERNAME : userName, userEmail : email, userPassword : password}, this.httpOptions)
+    return this.http.post(`${this.usersEndpoint}register`, {USERNAME : userName, EMAIL : email, PASSWORD : password}, this.httpOptions)
       .pipe(map(res => <any[]>res));
   }
 }
