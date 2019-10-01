@@ -23,8 +23,9 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         ISADMIN: {
-            type: DataTypes.INTEGER,
-            allowNull: false
+            type: DataTypes.STRING(1),
+            allowNull: false,
+            defaultValue: "0"
         }
     }, {
         tableName: 'USER'

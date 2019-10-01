@@ -10,10 +10,9 @@ import { UserService } from './../providers/user.service';
 })
 export class RegisterComponent implements OnInit {
   pageTitle = 'Register';
-  userName: string = '';
-  email: string = '';
-  password: string = '';
-  confirmPass: string = '';
+  USERNAME: string = '';
+  EMAIL: string = '';
+  PASSWORD: string = '';
 
   error: boolean = false;
   errMsg: string = '';
@@ -24,30 +23,24 @@ export class RegisterComponent implements OnInit {
   ngOnInit() { }
 
   onSubmit(): void {
-    if (this.userName == '') {
+    if (this.USERNAME == '') {
       this.errMsg = 'User name is required.';
       this.error = true;
-    } else if (this.email == '') {
+    } else if (this.EMAIL == '') {
       this.errMsg = 'Email Address is required.';
       this.error = true;
-    } else if (this.password == '') {
+    } else if (this.PASSWORD == '') {
       this.errMsg = 'Password is required.';
       this.error = true;
-    } else if (this.password.length < 8) {
+    } else if (this.PASSWORD.length < 8) {
       this.errMsg = 'Password must be at least 8 chars.';
-      this.error = true;
-    } else if (this.confirmPass == '') {
-      this.errMsg = 'Please confirm password.';
-      this.error = true;
-    } else if (this.password != this.confirmPass) {
-      this.errMsg = 'Passwords do not match';
       this.error = true;
     } else {
       this.error = false;
       this.errMsg = '';
 
       // Call UserService to Register
-      this.userService.register(this.userName, this.email, this.password).subscribe(data => {
+      this.userService.register(this.USERNAME, this.EMAIL, this.PASSWORD).subscribe(data => {
         if (data['error']) {
           this.errMsg = 'Registration unsuccessful.';
           this.error = true;
