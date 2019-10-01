@@ -13,37 +13,16 @@
 					{
 						"key": "Content-Type",
 						"name": "Content-Type",
-						"value": "text/plain",
+						"value": "application/json",
 						"type": "text"
 					}
 				],
 				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "USERNAME",
-							"value": "Mark",
-							"type": "text"
-						},
-						{
-							"key": "PASSWORD",
-							"value": "password",
-							"type": "text"
-						},
-						{
-							"key": "EMAIL",
-							"value": "mark@mail.com",
-							"type": "text"
-						},
-						{
-							"key": "ISADMIN",
-							"value": "1",
-							"type": "text"
-						}
-					],
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"random\",\n\t\"password\": \"password\",\n\t\"email\": \"random@mail.com\",\n\t\"isadmin\": 0\n}",
 					"options": {
 						"raw": {
-							"language": "text"
+							"language": "json"
 						}
 					}
 				},
@@ -70,27 +49,16 @@
 					{
 						"key": "Content-Type",
 						"name": "Content-Type",
-						"value": "text/plain",
+						"value": "application/x-www-form-urlencoded",
 						"type": "text"
 					}
 				],
 				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "USERNAME",
-							"value": "Michelle",
-							"type": "text"
-						},
-						{
-							"key": "PASSWORD",
-							"value": "password",
-							"type": "text"
-						}
-					],
+					"mode": "raw",
+					"raw": "{\n\t\"USERNAME\": \"Michelle\",\n\t\"PASSWORD\": \"password\"\n}",
 					"options": {
 						"raw": {
-							"language": "text"
+							"language": "json"
 						}
 					}
 				},
@@ -156,7 +124,7 @@
 						},
 						{
 							"key": "EMAIL",
-							"value": "michelle@mail.com",
+							"value": "michelle2@mail.com",
 							"type": "text"
 						},
 						{
@@ -164,7 +132,12 @@
 							"value": "0",
 							"type": "text"
 						}
-					]
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
 				},
 				"url": {
 					"raw": "http://localhost:3000/users/update/1",
@@ -188,7 +161,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/users/delete/8",
+					"raw": "http://localhost:3000/users/delete/11",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -197,7 +170,7 @@
 					"path": [
 						"users",
 						"delete",
-						"8"
+						"11"
 					]
 				}
 			},
@@ -243,7 +216,7 @@
 					"urlencoded": []
 				},
 				"url": {
-					"raw": "http://localhost:3000/users/getUser/3",
+					"raw": "http://localhost:3000/users/getUser/6",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -252,7 +225,7 @@
 					"path": [
 						"users",
 						"getUser",
-						"3"
+						"6"
 					]
 				}
 			},
