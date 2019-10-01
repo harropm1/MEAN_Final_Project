@@ -18,7 +18,6 @@ export class UserService {
 
   /* POST for login */
   login(userName: string, password: string) {
-    console.log("service here");
     return this.http.post(`${this.usersEndpoint}login`, {USERNAME : userName, PASSWORD : password}, this.httpOptions)
       .pipe(map(res => <any[]>res));
   }
