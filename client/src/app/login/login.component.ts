@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {}
 
+  //what happens when the user clicks the "Log In!" button
   onSubmit(): void {
     if (this.userName == '' || this.password == '') 
     {

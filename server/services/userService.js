@@ -43,7 +43,7 @@ userService.getUser = (userObj) => {
         })
 };
 
-//this is the put (update) request for the edit page(/users/update)
+//this is the put (update) request for the edit page(/users/edit)
 userService.update = (userObj) => {
     return userModel.update({ USERNAME: userObj.USERNAME, EMAIL: userObj.EMAIL }, { where: { ID: userObj.ID } })
         .then(user => {

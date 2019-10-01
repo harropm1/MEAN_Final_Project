@@ -9,7 +9,6 @@ import { AuthService } from './../providers/auth.service';
   styleUrls: ['./edit.component.css']
 })
 export class EditComponent implements OnInit {
-  pageTitle = "Edit/Delete"
   user: any = {};
   ID: number = 0;
   username: string = '';
@@ -32,7 +31,7 @@ export class EditComponent implements OnInit {
     // set elements values based on GET user data request for a specific user
     this.userService.getUser(this.ID).subscribe(data => {
       this.user = data;
-      this.username = this.user.USER_NAME;
+      this.username = this.user.USERNAME;
       this.email = this.user.EMAIL;
   });
   }
@@ -54,7 +53,7 @@ export class EditComponent implements OnInit {
           this.errMsg = 'Email Update Unsuccessful.';
           this.error = true;
         } else {
-          this.router.navigate(['leagues'], {queryParams: { ID: this.ID, username: this.username }});
+          this.router.navigate(['leagues'], {queryParams: { ID: this.ID, USERNAME: this.username }});
         }
       }); // end of editUser 
     }
