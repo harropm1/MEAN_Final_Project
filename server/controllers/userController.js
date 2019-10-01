@@ -52,7 +52,7 @@ userController.getUser = (req, res) => {
         })
 };
 
-//this is the put (update) request for the edit page(/users/update/{ID})
+//this is the put (update) request for the edit page(/users/edit/{ID})
 userController.update = (req, res) => {
     userService.update({
             ID: req.params.ID,
