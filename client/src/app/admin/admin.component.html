@@ -9,7 +9,11 @@
                     <th>User Email</th>
                 </tr>
             </thead>
-            <tbody id="tableBody">
+            <tbody>
+                <tr *ngFor="let user of users">
+                    <td>{{user.USERNAME}}</td>
+                    <td>{{user.EMAIL}}</td>
+                </tr>
             </tbody>
         </table>
     </div>
