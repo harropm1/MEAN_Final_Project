@@ -30,7 +30,6 @@ userService.register = (userObj) => {
 
 //this is the get for the single user edit/delete page so the information can be added
 userService.getUser = (userObj) => {
-    console.log(userObj);
     return userModel.findOne(
     {
         where: userObj
@@ -45,6 +44,7 @@ userService.getUser = (userObj) => {
 
 //this is the put (update) request for the edit page(/users/edit)
 userService.update = (userObj) => {
+    console.log(userObj);
     return userModel.update({ USERNAME: userObj.USERNAME, EMAIL: userObj.EMAIL }, { where: { ID: userObj.ID } })
         .then(user => {
             return user;

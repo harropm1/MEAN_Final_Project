@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from './../providers/user.service';
+import { AuthService } from './../providers/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,10 @@ export class LoginComponent implements OnInit {
   errMsg: string = '';
   
   // create instance of UserService
-  constructor(private userService: UserService, private router: Router) {}
+  constructor(
+              private authService: AuthService, 
+              private userService: UserService, 
+              private router: Router) {}
 
   ngOnInit() {}
 
@@ -35,10 +39,15 @@ export class LoginComponent implements OnInit {
 
       // Call UserService to authenticate
       this.userService.login(this.userName, this.password).subscribe(data => {
+        console.log(data);
         if (data['error']) {
+          this.authService.setAuthStatus(false);
+          this.authService.setUserId(0);
           this.errMsg = 'Login unsuccessful. Please make sure you are using the correct username and password.';
           this.error = true;
         } else {
+          this.authService.setAuthStatus(true);
+          this.authService.setUserId(data['ID']);
           this.router.navigate(['leagues'], {queryParams: {ID: this.ID, userName: this.userName}});
           console.log(data)
         }

@@ -10,37 +10,37 @@ export class AuthService {
 
   constructor() {}
 
-//   private isAuth: boolean = false;
-//   private isAdmin: boolean = false;
-  private uniqueId: number;
+   private isAuth: boolean = false;
+   private isAdmin: boolean = false;
+   private userId: number = 0;
 
 //   // Stores Auth status
-//   setAuthStatus(status: boolean) {
-//     this.isAuth = status;
-//   }
+   setAuthStatus(status: boolean) {
+     this.isAuth = status;
+   }
 
 //   // Gets Auth status
-//   getAuthStatus() {
-//     return this.isAuth;
-//   }
+   getAuthStatus() {
+     return this.isAuth;
+   }
 
 //   // Stores Admin status
-//   setAdminStatus(status: boolean) {
-//     this.isAdmin = status;
-//   }
+   setAdminStatus(status: boolean) {
+     this.isAdmin = status;
+   }
 
 //   // Gets Admin status
-//   getAdminStatus() {
-//     return this.isAdmin;
-//   }
+   getAdminStatus() {
+     return this.isAdmin;
+   }
 
   // Stores user id
-  setUniqueId(id: number) {
-    this.uniqueId = id;
+  setUserId(id: number) {
+    this.userId = id;
   }
 
   // Gets user id
-  getID() {
-    return this.uniqueId;
+  getUserId() {
+    return this.userId;
   }
 }
