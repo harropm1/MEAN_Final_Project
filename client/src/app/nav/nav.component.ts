@@ -9,7 +9,10 @@ import { AuthService } from './../providers/auth.service';
 })
 export class NavComponent implements OnInit {
 
-  constructor(private router: Router, private authService: AuthService) { }
+  constructor(
+    private router: Router, 
+    private authService: AuthService) {}
+
   ngOnInit() {}
 
   // checks if the user is logged in

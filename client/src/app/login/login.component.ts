@@ -40,32 +40,31 @@ export class LoginComponent implements OnInit {
       this.errMsg = '';
       // Call UserService to authenticate
       this.userService.login(this.userName, this.password).subscribe(data => {
-        console.log(data);
         //if there's an error
         if (data['error']) 
         {
-          this.authService.setAuthStatus(false);
-          this.errMsg = 'Login unsuccessful. Please make sure you are using the correct username and password.';
           this.error = true;
+          this.errMsg = 'Login unsuccessful. Please make sure you are using the correct username and password.';
+          this.authService.setAuthStatus(false);
         }
         //if there isnt't an error
         else 
         {
           //set the auth status
           this.authService.setAuthStatus(true);
-          //if they aren't an admin
+          //if they aren't listed as an admin
           if (data['ISADMIN'] == 0) 
           {
             this.authService.setAdminStatus(false);
             this.authService.setUserId(data['ID']);
           }
-          //if they are an admin
+          //if they are listed as an admin
           else
           {
             this.authService.setAdminStatus(true);
             this.authService.setUserId(data['ID']);
           }
-          //navigate to the leagues page
+          //navigate to the leagues page if there isn't an error, doesn't matter if they are an admin or not
           this.router.navigate(['leagues']);
         }
       });

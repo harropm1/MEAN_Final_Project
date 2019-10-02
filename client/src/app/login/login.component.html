@@ -16,6 +16,6 @@
                 <button type="submit" class="btn btn-light blueBackground" id="login" (click)="onSubmit()">Log In!</button>
             </fieldset>
         </form>
-        <div id="error"> {{this.errMsg}} </div>
+        <div *ngIf="error"> {{errMsg}} </div>
     </div>
 </main>
