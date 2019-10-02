@@ -15,31 +15,9 @@
                 </div>
                 <!--buttons to update and delete user-->
                 <button type="submit" class="btn btn-light blueBackground" id="update" (click)="onSubmit()">Update</button>
-                <button type="button" class="btn btn-primary" id="areYouSure" data-toggle="modal" data-target="#removeModal">Remove User</button>
+                <button type="button" class="btn btn-primary" id="remove" (click)="onDelete()">Remove User</button>
             </fieldset>
         </form>
-        <!-- Modal -->
-        <div class="modal fade" id="removeModal" tabindex="-1" role="dialog" aria-labelledby="removeModal"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h3 class="modal-title" id="exampleModalLabel">Remove User</h3>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        Are you sure you want to remove this user?
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">No, Take Me Back</button>
-                        <button type="button" class="btn btn-primary" id="remove">Yes, Remove Them</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--end of modal-->
-        <div id="msgDiv"></div>
+        <div id="error"> {{this.errMsg}} </div>
     </div>
 </main>

@@ -9,7 +9,6 @@ import { AuthService } from './../providers/auth.service';
   styleUrls: ['./edit.component.css']
 })
 export class EditComponent implements OnInit {
-  user = {};
   ID: number = 0;
   USERNAME: string = '';
   EMAIL: string = '';
@@ -18,7 +17,7 @@ export class EditComponent implements OnInit {
   errMsg: string = '';
 
   // create instance of UserService
-  constructor(private userService: UserService, private authService: AuthService, private router: Router) {}
+  constructor(private userService: UserService, private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
     this.ID = this.authService.getUserId();
@@ -29,17 +28,15 @@ export class EditComponent implements OnInit {
       console.log(data);
       this.USERNAME = data.USERNAME;
       this.EMAIL = data.EMAIL;
-  });
+    });
   }
   // Validation for the Update Info submit.
   onSubmit(): void {
-    if (this.EMAIL == '') 
-    {
+    if (this.EMAIL == '') {
       this.errMsg = 'Email Address is required.';
       this.error = true;
     }
-    else 
-    {
+    else {
       this.error = false;
       this.errMsg = '';
 
@@ -54,4 +51,17 @@ export class EditComponent implements OnInit {
       });
     }
   }
+
+  onDelete(): void {
+    this.userService.delete(this.authService.getUserId()).subscribe(data => {
+      if (data['error']) {
+        this.errMsg = 'Unable to delete your account.';
+        this.error = true;
+      } else {
+        this.authService.setAuthStatus(false);
+        this.authService.setAdminStatus(false);
+        this.router.navigate(['/']);
+      }
+    });
+  };
 }

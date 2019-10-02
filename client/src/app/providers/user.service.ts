@@ -44,4 +44,9 @@ export class UserService {
     return this.http.get(`${this.usersEndpoint}getUser/${this.authService.getUserId()}`, this.httpOptions)
       .pipe(map(res => <any[]>res));
   }
+
+  delete(id: number): Observable<any> {
+    return this.http.delete(`${this.usersEndpoint}delete/${this.authService.getUserId()}`, this.httpOptions)
+      .pipe(map(res => <any[]>res));
+  };
 }
