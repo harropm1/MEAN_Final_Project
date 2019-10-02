@@ -17,7 +17,10 @@ export class EditComponent implements OnInit {
   errMsg: string = '';
 
   // create instance of UserService
-  constructor(private userService: UserService, private authService: AuthService, private router: Router) { }
+  constructor(
+    private userService: UserService, 
+    private authService: AuthService, 
+    private router: Router) { }
 
   ngOnInit() {
 

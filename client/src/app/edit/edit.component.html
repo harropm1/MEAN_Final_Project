@@ -18,6 +18,6 @@
                 <button type="button" class="btn btn-primary" id="remove" (click)="onDelete()">Remove User</button>
             </fieldset>
         </form>
-        <div id="error"> {{this.errMsg}} </div>
+        <div *ngIf="error"> {{errMsg}} </div>
     </div>
 </main>

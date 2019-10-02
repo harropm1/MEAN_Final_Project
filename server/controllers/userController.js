@@ -10,8 +10,7 @@ userController.login = (req, res) => {
         .then((users) => {
             if (users == null)
             {
-                res.statusCode = 403;
-                res.end('Invalid credentials.');
+                res.json({'error': 'Invalid credentials.'});
             }
             req.session.ID = users.ID;
             req.session.ISADMIN = users.ISADMIN;

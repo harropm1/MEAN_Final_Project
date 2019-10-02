@@ -20,6 +20,6 @@
                 <button type="submit" class="btn btn-light blueBackground" id="register" (click)="onSubmit()">Register</button>
             </fieldset>
         </form>
-        <div id="error"> {{this.errMsg}} </div>
+        <div *ngIf="error"> {{errMsg}} </div>
     </div>
 </main>
