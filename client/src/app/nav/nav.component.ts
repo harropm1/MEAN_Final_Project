@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AuthService } from './../providers/auth.service';
 
 @Component({
   selector: 'app-nav',
@@ -8,30 +9,60 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class NavComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private authService: AuthService) { }
 
   ngOnInit() {
   }
 
   goLogin(): void {
-      this.router.navigate(['login']);
+    this.router.navigate(['login']);
   }
 
   goRegister(): void {
     this.router.navigate(['register']);
-}
+  }
 
+  goEdit(): void {
+    if (this.authService.getAuthStatus() == true)
+    {
+      this.router.navigate(['edit']);
+    }
+    else 
+    {
+      this.router.navigate(['login'])
+    }
+    
+  }
 
-goEdit(): void {
-  this.router.navigate(['edit']);
-}
+  goAdmin(): void {
+    if (this.authService.getAdminStatus() == true && this.authService.getAuthStatus() == true)
+    {
+      this.router.navigate(['admin']);
+    }
+    else if (this.authService.getAdminStatus() != false && this.authService.getAuthStatus() == true)
+    {
+      this.router.navigate(['leagues']);
+    }
+    else
+    {
+      this.router.navigate(['login']);
+    }
+  }
 
+  goLogout(): void {
+    this.authService.setAuthStatus(false);
+    this.authService.setAdminStatus(false);
+    this.router.navigate(['/']);
+  }
 
-goAdmin(): void {
-  this.router.navigate(['admin']);
-}
-
-goLogout(): void {
-  this.router.navigate(['logout']);
-}
+  goLeagues(): void {
+    if (this.authService.getAuthStatus() == true)
+    {
+      this.router.navigate(['leagues']);
+    }
+    else 
+    {
+      this.router.navigate(['login'])
+    }
+  }
 }
