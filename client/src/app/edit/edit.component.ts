@@ -20,17 +20,23 @@ export class EditComponent implements OnInit {
   constructor(private userService: UserService, private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
+
+    //if the user isn't logged in
+    if (this.authService.getAuthStatus() == false) 
+    {
+      this.router.navigate(['login']);
+    }
+
     this.ID = this.authService.getUserId();
-    console.log(this.ID)
 
     // set elements values based on GET user data request for a specific user
     this.userService.getUser(this.authService.getUserId()).subscribe(data => {
-      console.log(data);
       this.USERNAME = data.USERNAME;
       this.EMAIL = data.EMAIL;
     });
   }
-  // Validation for the Update Info submit.
+  
+  // what happens when the submit button is clicked
   onSubmit(): void {
     if (this.EMAIL == '') {
       this.errMsg = 'Email Address is required.';
@@ -52,6 +58,7 @@ export class EditComponent implements OnInit {
     }
   }
 
+  //what happens when the delete button is clicked
   onDelete(): void {
     this.userService.delete(this.authService.getUserId()).subscribe(data => {
       if (data['error']) {
