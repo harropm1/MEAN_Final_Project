@@ -1,21 +1,17 @@
 <main>
     <div class="container">
-        <!--Form to register, username, email, password-->
+        <!--Form to update email-->
         <form id="updateForm" name="updateForm">
             <fieldset class="container border border-secondary p-3 rounded col-6">
                 <legend class="font-weight-light bg-secondary text-center text-white w-50 rounded">Edit/Delete
                     Member</legend>
                 <div class="form-group">
                     <label for="USERNAME">User Name</label>
-                    <input type="text" class="form-control" id="USERNAME" name="USERNAME" [(ngModel)]="USERNAME" readonly>
+                    <input type="text" class="form-control" id="USERNAME" name="USERNAME" [(ngModel)]="USERNAME" value={{this.username}} readonly>
                 </div>
                 <div class="form-group">
                     <label for="EMAIL">Email</label>
-                    <input type="text" class="form-control" id="EMAIL" name="EMAIL" [(ngModel)]="EMAIL" required>
-                </div>
-                <div class="form-group">
-                    <label for="PASSWORD">Password</label>
-                    <input type="password" class="form-control" id="PASSWORD" name="PASSWORD" [(ngModel)]="PASSWORD" readonly>
+                    <input type="text" class="form-control" id="EMAIL" name="EMAIL" [(ngModel)]="EMAIL" value={{this.email}} required>
                 </div>
                 <!--buttons to update and delete user-->
                 <button type="submit" class="btn btn-light blueBackground" id="update" (click)="onSubmit()">Update</button>

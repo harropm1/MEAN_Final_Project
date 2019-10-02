@@ -9,10 +9,10 @@ import { AuthService } from './../providers/auth.service';
   styleUrls: ['./edit.component.css']
 })
 export class EditComponent implements OnInit {
-  user: any = {};
+  user = {};
   ID: number = 0;
-  username: string = '';
-  email: string = '';
+  USERNAME: string = '';
+  EMAIL: string = '';
 
   error: boolean = false;
   errMsg: string = '';
@@ -21,24 +21,19 @@ export class EditComponent implements OnInit {
   constructor(private userService: UserService, private authService: AuthService, private router: Router) {}
 
   ngOnInit() {
-    // if (!(this.authService.getAuth())) {
-    //   this.router.navigate(['/login']);
-    // }
-
-    //this.ID = this.authService.getUserId();
-    // console.log(this.ID)
+    this.ID = this.authService.getUserId();
+    console.log(this.ID)
 
     // set elements values based on GET user data request for a specific user
-    this.userService.getUser().subscribe(data => {
+    this.userService.getUser(this.authService.getUserId()).subscribe(data => {
       console.log(data);
-      this.user = data;
-      this.username = this.user.USERNAME;
-      this.email = this.user.EMAIL;
+      this.USERNAME = data.USERNAME;
+      this.EMAIL = data.EMAIL;
   });
   }
   // Validation for the Update Info submit.
   onSubmit(): void {
-    if (this.email == '') 
+    if (this.EMAIL == '') 
     {
       this.errMsg = 'Email Address is required.';
       this.error = true;
@@ -49,23 +44,14 @@ export class EditComponent implements OnInit {
       this.errMsg = '';
 
       // Call UserService to edit email
-      this.userService.edit(this.email).subscribe(data => {
+      this.userService.edit(this.USERNAME, this.EMAIL).subscribe(data => {
         if (data['error']) {
           this.errMsg = 'Email Update Unsuccessful.';
           this.error = true;
         } else {
-          this.router.navigate(['edit'], {queryParams: { ID: this.ID, USERNAME: this.username }});
+          this.router.navigate(['edit']);
         }
-      }); // end of editUser 
+      });
     }
-  } // end of onSubmit
-
-
-  // Delete the user and reset the authorization statuses.
-  // onDelete(): void {
-  //     // Call UserService to delete User
-  //     this.userService.delete(this.ID).subscribe(data => {
-  //     this.router.navigate(['/']);
-  //     });
-  // } // end of onDelete
-} // end of export
+  }
+}

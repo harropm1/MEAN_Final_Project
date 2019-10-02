@@ -33,13 +33,13 @@ export class UserService {
   }
 
   // PUT for update
-  edit(email: string): Observable<any> {
-    return this.http.put(`${this.usersEndpoint}edit/${this.authService.getUserId()}`, { email: email }, this.httpOptions)
+  edit(USERNAME: string, EMAIL: string): Observable<any> {
+    return this.http.put(`${this.usersEndpoint}edit/${this.authService.getUserId()}`, { USERNAME: USERNAME, EMAIL: EMAIL }, this.httpOptions)
       .pipe(map(res => <any[]>res));
   }
   
   //GET for inserting a user's information
-  getUser(): Observable<any> {
+  getUser(id: number): Observable<any> {
     console.log(this.authService.getUserId());
     return this.http.get(`${this.usersEndpoint}getUser/${this.authService.getUserId()}`, this.httpOptions)
       .pipe(map(res => <any[]>res));
