@@ -17,9 +17,9 @@ import { AdminComponent } from './admin/admin.component';
 
 const appRoutes: Routes = [
   {path: '', component: IndexComponent},
-  {path: 'users/login', component: LoginComponent},
-  {path: 'users/register', component: RegisterComponent},
-  {path: 'users/edit', component: EditComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent},
+  {path: 'edit', component: EditComponent},
   {path: 'leagues', component: LeaguesComponent},
   {path: 'admin', component: AdminComponent}
 ];

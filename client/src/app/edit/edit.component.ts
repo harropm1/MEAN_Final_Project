@@ -25,11 +25,12 @@ export class EditComponent implements OnInit {
     //   this.router.navigate(['/login']);
     // }
 
-    this.ID = this.authService.getID();
+    //this.ID = this.authService.getUserId();
     // console.log(this.ID)
 
     // set elements values based on GET user data request for a specific user
-    this.userService.getUser(this.ID).subscribe(data => {
+    this.userService.getUser().subscribe(data => {
+      console.log(data);
       this.user = data;
       this.username = this.user.USERNAME;
       this.email = this.user.EMAIL;
@@ -48,12 +49,12 @@ export class EditComponent implements OnInit {
       this.errMsg = '';
 
       // Call UserService to edit email
-      this.userService.edit(this.ID, this.email).subscribe(data => {
+      this.userService.edit(this.email).subscribe(data => {
         if (data['error']) {
           this.errMsg = 'Email Update Unsuccessful.';
           this.error = true;
         } else {
-          this.router.navigate(['leagues'], {queryParams: { ID: this.ID, USERNAME: this.username }});
+          this.router.navigate(['edit'], {queryParams: { ID: this.ID, USERNAME: this.username }});
         }
       }); // end of editUser 
     }

@@ -3,6 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, Subject, of} from 'rxjs';
 import { map } from 'rxjs/operators';
 
+import { AuthService } from './../providers/auth.service';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -16,7 +18,7 @@ export class UserService {
   };
 
   loginUserId: number = 0;
-  constructor(private http: HttpClient) { }
+  constructor(private authService: AuthService, private http: HttpClient) { }
 
   /* POST for login */
   login(userName: string, password: string) {
@@ -31,14 +33,15 @@ export class UserService {
   }
 
   // PUT for update
-  edit(ID: number, email: string): Observable<any> {
-    return this.http.put(`${this.usersEndpoint}edit/${ID}`, { email: email }, this.httpOptions)
+  edit(email: string): Observable<any> {
+    return this.http.put(`${this.usersEndpoint}edit/${this.authService.getUserId()}`, { email: email }, this.httpOptions)
       .pipe(map(res => <any[]>res));
   }
   
   //GET for inserting a user's information
-  getUser(ID: number): Observable<any> {
-    return this.http.get(`${this.usersEndpoint}data/${ID}`, this.httpOptions)
+  getUser(): Observable<any> {
+    console.log(this.authService.getUserId());
+    return this.http.get(`${this.usersEndpoint}getUser/${this.authService.getUserId()}`, this.httpOptions)
       .pipe(map(res => <any[]>res));
   }
 }
