@@ -42,14 +42,12 @@ export class LoginComponent implements OnInit {
         console.log(data);
         if (data['error']) {
           this.authService.setAuthStatus(false);
-          this.authService.setUserId(0);
           this.errMsg = 'Login unsuccessful. Please make sure you are using the correct username and password.';
           this.error = true;
         } else {
           this.authService.setAuthStatus(true);
           this.authService.setUserId(data['ID']);
-          this.router.navigate(['leagues'], {queryParams: {ID: this.ID, userName: this.userName}});
-          console.log(data)
+          this.router.navigate(['leagues']);
         }
       });
     }

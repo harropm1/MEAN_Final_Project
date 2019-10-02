@@ -8,35 +8,35 @@ import { map } from 'rxjs/operators';
 })
 export class AuthService {
 
-  constructor() {}
+  constructor() { }
 
-   private isAuth: boolean = false;
-   private isAdmin: boolean = false;
-   private userId: number = 0;
+  private isAuth: boolean = false;
+  private isAdmin: boolean = false;
+  private userId: number = 0;
 
-//   // Stores Auth status
-   setAuthStatus(status: boolean) {
-     this.isAuth = status;
-   }
+  // Stores Auth status
+  setAuthStatus(status: boolean) {
+    this.isAuth = status;
+  }
 
-//   // Gets Auth status
-   getAuthStatus() {
-     return this.isAuth;
-   }
+  // Gets Auth status
+  getAuthStatus() {
+    return this.isAuth;
+  }
 
-//   // Stores Admin status
-   setAdminStatus(status: boolean) {
-     this.isAdmin = status;
-   }
+  // Stores Admin status
+  setAdminStatus(status: boolean) {
+    this.isAdmin = status;
+  }
 
-//   // Gets Admin status
-   getAdminStatus() {
-     return this.isAdmin;
-   }
+  // Gets Admin status
+  getAdminStatus() {
+    return this.isAdmin;
+  }
 
   // Stores user id
-  setUserId(id: number) {
-    this.userId = id;
+  setUserId(ID: number) {
+    this.userId = ID;
   }
 
   // Gets user id

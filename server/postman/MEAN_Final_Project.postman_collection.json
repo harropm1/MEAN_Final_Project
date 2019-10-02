@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "2d418f19-abc9-4ef7-8eb1-a81070c8a7bd",
-		"name": "labs copy",
+		"name": "MEAN_Final_Project",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -54,8 +54,19 @@
 					}
 				],
 				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"USERNAME\": \"Michelle\",\n\t\"PASSWORD\": \"password\"\n}",
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "USERNAME",
+							"value": "Michelle",
+							"type": "text"
+						},
+						{
+							"key": "PASSWORD",
+							"value": "password",
+							"type": "text"
+						}
+					],
 					"options": {
 						"raw": {
 							"language": "json"
@@ -118,18 +129,8 @@
 							"type": "text"
 						},
 						{
-							"key": "PASSWORD",
-							"value": "password",
-							"type": "text"
-						},
-						{
 							"key": "EMAIL",
-							"value": "michelle2@mail.com",
-							"type": "text"
-						},
-						{
-							"key": "ISADMIN",
-							"value": "0",
+							"value": "michelle@mail.com",
 							"type": "text"
 						}
 					],
@@ -140,7 +141,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/users/update/1",
+					"raw": "http://localhost:3000/users/edit/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -148,7 +149,7 @@
 					"port": "3000",
 					"path": [
 						"users",
-						"update",
+						"edit",
 						"1"
 					]
 				}
@@ -161,7 +162,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/users/delete/11",
+					"raw": "http://localhost:3000/users/delete/20",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -170,7 +171,7 @@
 					"path": [
 						"users",
 						"delete",
-						"11"
+						"20"
 					]
 				}
 			},
@@ -216,7 +217,7 @@
 					"urlencoded": []
 				},
 				"url": {
-					"raw": "http://localhost:3000/users/getUser/6",
+					"raw": "http://localhost:3000/users/getUser/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -225,7 +226,7 @@
 					"path": [
 						"users",
 						"getUser",
-						"6"
+						"1"
 					]
 				}
 			},
