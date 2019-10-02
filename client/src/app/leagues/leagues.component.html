@@ -7,7 +7,7 @@
                 <legend class="font-weight-light bg-secondary text-center text-white w-50 rounded">Search Volunteer Teams </legend>
                 <div class="sortByCategory form-group">
                     <label for="locationSelect">Choose a volunteer location</label>
-                    <select class="form-control" id="locationSelect" name="locationSelect" (change)="onSelect($event.target.value)">
+                    <select class="form-control" id="locationSelect" name="locationSelect">
                         <option value="Choose one">Choose a location</option>
                         <option *ngFor="let league of leagues; let i = index" [value]="leagues[i].Code">{{leagues[i].Name}}</option>
                     </select>
