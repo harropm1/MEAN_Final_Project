@@ -1,6 +1,6 @@
 <!--nav bar-->
 <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
-    <a class="navbar-brand" href="/">Home</a>
+    <a class="navbar-brand" (click)="goHome()">Home</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
         aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -8,22 +8,22 @@
     <div class="collapse navbar-collapse" id="navbarToggler">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
-                <a class="nav-link" id="login" (click)="goLogin()">Log In</a>
+                <a class="nav-link" id="login" (click)="goLogin()" *ngIf="!isAuth()">Log In</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="signup"(click)="goRegister()">Sign Up</a>
+                <a class="nav-link" id="signup"(click)="goRegister()" *ngIf="!isAuth()">Sign Up</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="leagues" (click)="goLeagues()">Leagues</a>
+                <a class="nav-link" id="leagues" (click)="goLeagues()" *ngIf="isAuth()">Leagues</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="update" (click)="goEdit()">Edit Your Profile</a>
+                <a class="nav-link" id="update" (click)="goEdit()" *ngIf="isAuth()">Edit Your Profile</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="admin" (click)="goAdmin()">Administrator</a>
+                <a class="nav-link" id="admin" (click)="goAdmin()" *ngIf="isAdmin()">Administrator</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="logout" (click)="goLogout()">Log Out</a>
+                <a class="nav-link" id="logout" (click)="goLogout()" *ngIf="isAuth()">Log Out</a>
             </li>
         </ul>
     </div>

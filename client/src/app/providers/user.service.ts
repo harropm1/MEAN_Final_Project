@@ -40,7 +40,6 @@ export class UserService {
   
   //GET for inserting a user's information
   getUser(id: number): Observable<any> {
-    console.log(this.authService.getUserId());
     return this.http.get(`${this.usersEndpoint}getUser/${this.authService.getUserId()}`, this.httpOptions)
       .pipe(map(res => <any[]>res));
   }
