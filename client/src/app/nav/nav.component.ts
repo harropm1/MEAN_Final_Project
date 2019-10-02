@@ -39,7 +39,7 @@ export class NavComponent implements OnInit {
     {
       this.router.navigate(['admin']);
     }
-    else if (this.authService.getAdminStatus() != false && this.authService.getAuthStatus() == true)
+    else if (this.authService.getAdminStatus() == false && this.authService.getAuthStatus() == true)
     {
       this.router.navigate(['leagues']);
     }
