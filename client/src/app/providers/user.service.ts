@@ -20,13 +20,13 @@ export class UserService {
   loginUserId: number = 0;
   constructor(private authService: AuthService, private http: HttpClient) { }
 
-  /* POST for login */
+  // POST for login
   login(userName: string, password: string) {
     return this.http.post(`${this.usersEndpoint}login`, {USERNAME : userName, PASSWORD : password}, this.httpOptions)
       .pipe(map(res => <any[]>res));
   }
   
-  /* POST for register */
+  // POST for register
   register(userName: string, email: string, password: string) {
     return this.http.post(`${this.usersEndpoint}register`, {username : userName, email : email, password : password}, this.httpOptions)
       .pipe(map(res => <any[]>res));
@@ -44,6 +44,7 @@ export class UserService {
       .pipe(map(res => <any[]>res));
   }
 
+  //DELETE for a specific user
   delete(id: number): Observable<any> {
     return this.http.delete(`${this.usersEndpoint}delete/${this.authService.getUserId()}`, this.httpOptions)
       .pipe(map(res => <any[]>res));
